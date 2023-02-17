@@ -1,8 +1,8 @@
 import { useState } from "react";
 import users from '../data';
-import { validateEmail } from '../utils/validateEmail';
+// import { validateEmail } from '../utils/validateEmail';
 import { PAGES } from '../constants';
-import { Logo, FormRow, Modal } from '../components';
+import { FormRow, Modal } from '../components';
 import Wrapper from '../styles/styled/Login.styled';
 import '../styles/login.css';
 
@@ -14,16 +14,16 @@ const initialState = {
   type: ''
 };
 
-const [landing, login, main, vote, admin] = PAGES;
+const [landing, , , vote, ] = PAGES;
 
 const Login = ({ setPage }) => {
   const [values, setValues] = useState(initialState);
-  const [isLoading, setIsLoading] = useState(false);
+  let isLoading = false;
   const [isError, setIsError] = useState(false);
   const [errorMessages, setErrorMessages] = useState([]);
   const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
+  let emailError = false;
+  let passwordError = false;
 
   const handleChange = (e) => {
     const name = e.target.name;
