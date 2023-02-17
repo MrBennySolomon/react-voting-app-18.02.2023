@@ -1,0 +1,46 @@
+.graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  margin-bottom: 2rem;
+}
+
+td {
+  
+  
+  
+
+  border: 2px solid black;
+  width: 30%;
+}
+
+tr{
+  border: 2px solid black;
+  width: 100%;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 50%;
+}
+
+button.reset {
+  width: 100%;
+}
+
+body {
+  background: url(../img/vote-intro.jpg) no-repeat center center/contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  
+}

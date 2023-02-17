@@ -1,0 +1,27 @@
+form {
+  
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  width: 25vw;
+  height:50vh;
+}
+
+button {
+  width: 50%;
+  height: 10%;
+  font-size: 1rem;
+}
+
+@media (min-width:601px) and (max-width:800px) {
+  form {
+    width: 35vw;
+  }
+}
+
+@media (max-width:600px) {
+
+  form {
+    width: 50vw;
+  }
+  
+}

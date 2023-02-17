@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { PAGES } from './constants';
+
+import { Main, Landing, Login, Vote, Admin } from './pages';
+
+import './styles/App.css'
+
+const userData = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')) : null;
+
+const App = () => {
+  const [page, setPage] = useState('landing');
+
+  const [landing, login, main, vote, admin] = PAGES;
+
+  useEffect(() => {
+    if (!userData) {
+      setPage(landing);
+    } else {
+      setPage(vote);
+    }
+  }, [landing, vote]);
+
+  switch (page) {
+    case landing:
+      return <Landing setPage={setPage} />;
+    case login:
+      return <Login setPage={setPage} />;
+    case main:
+      return <Main setPage={setPage} />;
+    case vote:
+      return <Vote setPage={setPage} />;
+    case admin:
+      return <Admin setPage={setPage} />;
+    default:
+      throw new Error('SWITCH CASE WENT WRONG');
+  }
+};
 
 export default App;
