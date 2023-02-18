@@ -1,3 +1,13 @@
+• This app is a voting application in React.
+• This application allows users to login, and vote for one of the parties.
+• Each vote that a party gets - will be shown.
+
+### The application will have to following sections:
+• Intro Page.
+• A Login Page – enter username and password    
+• A Voting Page – Where you have the buttons to vote for each party.
+• An Admin Page – Where all the users are shown in a table, and the users who voted are marked, Also, stats
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
