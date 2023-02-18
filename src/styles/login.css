@@ -12,6 +12,11 @@ button {
   font-size: 1rem;
 }
 
+h1.header {
+  background-color: white;
+  color: black;
+}
+
 @media (min-width:601px) and (max-width:800px) {
   form {
     width: 35vw;

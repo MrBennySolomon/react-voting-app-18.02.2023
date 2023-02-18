@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import '../styles/Vote.css';
 import { PAGES } from '../constants';
 import { Navbar } from '../components';
+import Wrapper from '../styles/styled/Login.styled';
+import { Modal } from '../components';
 
 
 const Vote = ({ setPage }) => {
+  const [isError, setIsError] = useState(false);
+  const [errorMessages, setErrorMessages] = useState(['You Already Voted']);
   const [finish, setFinish] = useState(false);
   const [, , , , admin,thankyou] = PAGES;
   let tempParty = '';
@@ -26,12 +30,20 @@ const Vote = ({ setPage }) => {
       localStorage.setItem(votedParty, JSON.stringify(Number(voteCount) + 1));
       localStorage.setItem('voted', JSON.stringify(voted));
       userData.type === 'admin' ? setPage(admin) : setPage(thankyou);
+    }else{
+      setIsError(true);
     }
   }
 
   const changeHandler = () => setFinish(false);
+  
+  const closeModal = () => {
+    setIsError(false);
+    setErrorMessages([]);
+  };
 
   return (
+    <Wrapper className='full-page'>
     <div className='vote-div'>
       <Navbar setPage={setPage} user={user} setUser={setUser} />
       <div className='cards'>
@@ -45,7 +57,12 @@ const Vote = ({ setPage }) => {
         <button onClick={changeHandler} className={finish ? 'change' : 'change hidden'}>CHANGE VOTED</button>
       </div>
     </div>
-    
+    {isError && (
+      <Modal
+        closeModal={closeModal}
+        messages={errorMessages} />
+    )}
+    </Wrapper>
   )
 }
 

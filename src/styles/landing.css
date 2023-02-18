@@ -16,3 +16,8 @@ button {
   font-size: 2rem;
   cursor: pointer;
 }
+
+h1.header {
+  background-color: white;
+  color: black;
+}

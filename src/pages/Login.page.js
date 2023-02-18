@@ -74,7 +74,7 @@ const Login = ({ setPage }) => {
 
   return (
     <Wrapper className='full-page'>
-      <h1>Login Page</h1>
+      <h1 className='header'>Login Page</h1>
       <form onSubmit={onSubmit}>
         <FormRow
           error={nameError}
