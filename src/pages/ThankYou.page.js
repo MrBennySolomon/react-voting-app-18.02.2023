@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Navbar } from '../components';
+import { Navbar }          from '../components';
 import '../styles/ThankYou.css';
 
 
 const ThankYou = ({setPage}) => {
-  const userData = JSON.parse(localStorage.getItem('userData'));
+  const userData        = JSON.parse(localStorage.getItem('userData'));
   const [user, setUser] = useState(userData);
+
   return (
     <>
       <Navbar setPage={setPage} user={user} setUser={setUser} />
@@ -16,4 +17,4 @@ const ThankYou = ({setPage}) => {
   )
 }
 
-export default ThankYou
+export default ThankYou;

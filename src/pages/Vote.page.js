@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
+import { PAGES }           from '../constants';
+import { Navbar }          from '../components';
+import Wrapper             from '../styles/styled/Login.styled';
+import { Modal }           from '../components';
 import '../styles/Vote.css';
-import { PAGES } from '../constants';
-import { Navbar } from '../components';
-import Wrapper from '../styles/styled/Login.styled';
-import { Modal } from '../components';
-
 
 const Vote = ({ setPage }) => {
-  const [isError, setIsError] = useState(false);
+  const [isError, setIsError]             = useState(false);
   const [errorMessages, setErrorMessages] = useState(['You Already Voted']);
-  const [finish, setFinish] = useState(false);
-  const [, , , , admin,thankyou] = PAGES;
-  let tempParty = '';
-  const voted = JSON.parse(localStorage.getItem('voted'));
-  const userData = JSON.parse(localStorage.getItem('userData'));
-  const [user, setUser] = useState(userData);
+  const userData                          = JSON.parse(localStorage.getItem('userData'));
+  const [user, setUser]                   = useState(userData);
+  const [finish, setFinish]               = useState(false);
+  const [, , , , admin,thankyou]          = PAGES;
+  const voted                             = JSON.parse(localStorage.getItem('voted'));
+  let tempParty                           = '';
   
   const clickHandler = (e) => {
     tempParty = e.target.getAttribute('class').toString();

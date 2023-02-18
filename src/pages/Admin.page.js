@@ -1,19 +1,17 @@
-import '../styles/Admin.css';
-import React, { useState } from 'react';
+import React, { useState }                               from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-// import { PAGES } from '../constants';
-import { Navbar } from '../components';
+import { Doughnut }                                      from 'react-chartjs-2';
+import { Navbar }                                        from '../components';
+import '../styles/Admin.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-
-// const [landing, login, main, vote, admin] = PAGES;
-
 const Admin = ({ setPage }) => {
-  const userData = JSON.parse(localStorage.getItem('userData'));
+  const userData        = JSON.parse(localStorage.getItem('userData'));
+  const users           = JSON.parse(localStorage.getItem('users'));
   const [user, setUser] = useState(userData);
-  const data = {
+
+  const data            = {
     labels: ['Likud', 'YeshAtid', 'Haavoda', 'Merech'],
     datasets: [
       {
@@ -36,11 +34,9 @@ const Admin = ({ setPage }) => {
     ],
   };
 
-  const users = JSON.parse(localStorage.getItem('users'));
-
   const clickHandler = (e) => {
     const userName = e.target.getAttribute('name');
-    const voted = JSON.parse(localStorage.getItem('voted'));
+    const voted    = JSON.parse(localStorage.getItem('voted'));
     const newVoted = voted.filter((item) => item.name !== userName);
     localStorage.setItem('voted', JSON.stringify(newVoted));
   }

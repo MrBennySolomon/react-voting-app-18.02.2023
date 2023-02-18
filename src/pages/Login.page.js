@@ -1,9 +1,8 @@
-import { useState } from "react";
-import users from '../data';
-// import { validateEmail } from '../utils/validateEmail';
-import { PAGES } from '../constants';
+import { useState }       from "react";
+import users              from '../data';
+import { PAGES }          from '../constants';
 import { FormRow, Modal } from '../components';
-import Wrapper from '../styles/styled/Login.styled';
+import Wrapper            from '../styles/styled/Login.styled';
 import '../styles/login.css';
 
 const initialState = {
@@ -17,46 +16,29 @@ const initialState = {
 const [landing, , , vote, , ] = PAGES;
 
 const Login = ({ setPage }) => {
-  const [values, setValues] = useState(initialState);
-  let isLoading = false;
-  const [isError, setIsError] = useState(false);
+  const [values, setValues]               = useState(initialState);
+  const [isError, setIsError]             = useState(false);
   const [errorMessages, setErrorMessages] = useState([]);
-  const [nameError, setNameError] = useState(false);
-  let emailError = false;
-  let passwordError = false;
+  const [nameError, setNameError]         = useState(false);
+  let isLoading                           = false;
+  let emailError                          = false;
+  let passwordError                       = false;
 
   const handleChange = (e) => {
-    const name = e.target.name;
+    const name  = e.target.name;
     const value = e.target.value;
-
     setValues({ ...values, [name]: value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     const { name, email, password } = values;
-
     setNameError(false);
-    // if (!name) {
-    //   const msg = 'Please enter your name';
-    //   handleError(msg, setNameError);
-    // } else if (!email || validateEmail(email)) {
-    //   const msg = 'Please enter a valid email';
-    //   handleError(msg, setEmailError);
-    // } else if (!password) {
-    //   const msg = 'Please enter a password';
-    //   handleError(msg, setPasswordError);
-    // }
 
     const validUser = users.find((user) => user.name === name && user.email === email && user.password === password);
 
-    if (!validUser) {
-      handleError('USER NOT FOUND', setNameError);
-    }else{
-      localStorage.setItem('userData', JSON.stringify(validUser));
-      setPage(vote);
-      
-    }
+    if (!validUser) {handleError('USER NOT FOUND', setNameError);}
+    else{localStorage.setItem('userData', JSON.stringify(validUser));setPage(vote);}
   };
 
   const handleError = (msg, setMethod) => {

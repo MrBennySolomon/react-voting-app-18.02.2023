@@ -1,8 +1,7 @@
 import Landing from "./Landing.page";
 import Login from "./Login.page";
-import Main from './Main.page';
-import Vote from './Vote';
-import Admin from './Admin';
-import ThankYou from './ThankYou';
+import Vote from './Vote.page';
+import Admin from './Admin.page';
+import ThankYou from './ThankYou.page';
 
-export { Main, Landing, Login, Vote, Admin, ThankYou };
+export { Landing, Login, Vote, Admin, ThankYou };

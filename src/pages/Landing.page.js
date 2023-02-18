@@ -1,6 +1,6 @@
 import { PAGES } from '../constants';
-import users from '../data';
-import Wrapper from '../styles/styled/Landing.styled';
+import users     from '../data';
+import Wrapper   from '../styles/styled/Landing.styled';
 import '../styles/landing.css'
 
 const [, login, , , , ] = PAGES;
@@ -19,9 +19,7 @@ const Landing = ({ setPage }) => {
     <Wrapper>
       <div className='flex-intro'>
         <h1 className='header'>VOTING APP</h1>
-        <button onClick={() => setPage(login)}>
-          VOTE
-        </button>
+        <button onClick={() => setPage(login)}>VOTE</button>
       </div>
     </Wrapper>
   );
