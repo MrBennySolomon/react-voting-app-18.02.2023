@@ -17,10 +17,10 @@ body {
   gap: 5%;
 }
 
-.party-likud,
-.party-yeshatid,
-.party-haavoda,
-.party-merech {
+.Likud,
+.YeshAtid,
+.Haavoda,
+.Merech {
   width: 40%;
   height: 30%;
 
@@ -30,19 +30,19 @@ body {
   box-shadow: 10px 10px 5px #aaaaaa;
 }
 
-.party-likud{
+.Likud{
   background: url(../img/likud.jpg) no-repeat center center/contain;
 }
 
-.party-yeshatid{
+.YeshAtid{
   background: url(../img/yesh_atid.jpg) no-repeat center center/contain;
 }
 
-.party-haavoda{
+.Haavoda{
   background: url(../img/haavoda.png) no-repeat center center/contain;
 }
 
-.party-merech{
+.Merech{
   background: url(../img/merech.jpg) no-repeat center center/contain;
 }
 

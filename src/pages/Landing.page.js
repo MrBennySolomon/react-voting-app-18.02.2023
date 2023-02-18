@@ -11,9 +11,7 @@ const Landing = ({ setPage }) => {
   if (!localStorage.getItem('YeshAtid'))  localStorage.setItem('YeshAtid', '0');
   if (!localStorage.getItem('Haavoda'))   localStorage.setItem('Haavoda', '0');
   if (!localStorage.getItem('Merech'))    localStorage.setItem('Merech', '0');
-
-
-  localStorage.setItem('voted', JSON.stringify([]));
+  if (!localStorage.getItem('voted'))     localStorage.setItem('voted', JSON.stringify([]));
 
 
 
