@@ -44,8 +44,8 @@ const Vote = ({ setPage }) => {
         <button onClick={doneHandler} className={finish ? 'done' : 'done hidden'}>DONE</button>
         <button onClick={changeHandler} className={finish ? 'change' : 'change hidden'}>CHANGE VOTED</button>
       </div>
-
     </div>
+    
   )
 }
 

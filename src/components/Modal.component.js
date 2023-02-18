@@ -3,12 +3,11 @@ const Modal = ({ closeModal, messages }) => {
 
   return (
     <div className='modal-overlay'>
-      <div className='modal-container flex-modal'>
+      <div className='flex-modal'>
         <h2>Error</h2>
-        <h6>{`${messages.join(', ')}`}.</h6>
-        <button className='btn close-modal-btn' onClick={closeModal}>
-          OK
-        </button>
+        <h5>{`${messages.join(', ')}`}.</h5>
+        <button className='btnModal' onClick={closeModal}>OK</button>
+        
       </div>
     </div>
   );
