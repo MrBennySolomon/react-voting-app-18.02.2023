@@ -6,11 +6,11 @@ import '../styles/landing.css'
 const [, login, , , ] = PAGES;
 
 const Landing = ({ setPage }) => {
-  localStorage.setItem('users', JSON.stringify(users));
-  localStorage.setItem('Likud', '0');
-  localStorage.setItem('YeshAtid', '0');
-  localStorage.setItem('Haavoda', '0');
-  localStorage.setItem('Merech', '0');
+  if (!localStorage.getItem('users'))     localStorage.setItem('users', JSON.stringify(users));
+  if (!localStorage.getItem('Likud'))     localStorage.setItem('Likud', '0');
+  if (!localStorage.getItem('YeshAtid'))  localStorage.setItem('YeshAtid', '0');
+  if (!localStorage.getItem('Haavoda'))   localStorage.setItem('Haavoda', '0');
+  if (!localStorage.getItem('Merech'))    localStorage.setItem('Merech', '0');
 
 
   localStorage.setItem('voted', JSON.stringify([]));
