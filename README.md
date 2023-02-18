@@ -7,6 +7,8 @@
 ---------------------------------------------------
 ## • i used : react, html, css, localStorage And mobile first approach.
 ---------------------------------------------------
+live preview at: https://react-voting-app-benny.netlify.app/
+---------------------------------------------------
 ## The application will have to following sections:
 ---------------------------------------------------
 ### • Intro Page.
