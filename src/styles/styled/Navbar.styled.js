@@ -35,7 +35,7 @@ const Wrapper = styled.nav`
     align-items: center;
     justify-content: center;
     gap: 0 0.5rem;
-    position: relative;
+    /* position: relative; */
     box-shadow: var(--shadow-2);
   }
 
@@ -57,7 +57,7 @@ const Wrapper = styled.nav`
   .dropdown-btn {
     background: transparent;
     border-color: transparent;
-    color: var(--red-dark);
+    color: #333;
     letter-spacing: var(--letterSpacing);
     text-transform: capitalize;
     cursor: pointer;

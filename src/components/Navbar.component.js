@@ -1,23 +1,21 @@
 import { useState } from 'react';
 import { FaUserCircle, FaCaretDown } from 'react-icons/fa';
+import { PAGES } from '../constants';
 
 import Wrapper from '../styles/styled/Navbar.styled';
-import Logo from './Logo.component';
+const [landing, , , , ] = PAGES;
 
-const Navbar = ({ user, setUser }) => {
+const Navbar = ({ setPage, user, setUser }) => {
   const [showLogout, setShowLogout] = useState(false);
 
   const handleLogout = () => {
-    setUser('');
     localStorage.removeItem('userData');
+    setPage(landing);
   };
 
   return (
     <Wrapper>
       <div className='nav-center'>
-        <div>
-          <Logo />
-        </div>
         <div className='btn-container'>
           <button
             type='button'

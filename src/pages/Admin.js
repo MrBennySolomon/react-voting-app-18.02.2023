@@ -1,8 +1,9 @@
 import '../styles/Admin.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 // import { PAGES } from '../constants';
+import { Navbar } from '../components';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -10,6 +11,8 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 // const [landing, login, main, vote, admin] = PAGES;
 
 const Admin = ({ setPage }) => {
+  const userData = JSON.parse(localStorage.getItem('userData'));
+  const [user, setUser] = useState(userData);
   const data = {
     labels: ['Likud', 'YeshAtid', 'Haavoda', 'Merech'],
     datasets: [
@@ -32,17 +35,26 @@ const Admin = ({ setPage }) => {
       },
     ],
   };
+
   const users = JSON.parse(localStorage.getItem('users'));
+
+  const clickHandler = (e) => {
+    const userName = e.target.getAttribute('name');
+    const voted = JSON.parse(localStorage.getItem('voted'));
+    const newVoted = voted.filter((item) => item.name !== userName);
+    localStorage.setItem('voted', JSON.stringify(newVoted));
+  }
 
   return (
     <>
+      <Navbar setPage={setPage} user={user} setUser={setUser} />
       <div className='graph'>
         <Doughnut data={data} />
       </div>
       <table>
         <tbody>
           {users.map((user) => {
-            return <tr key={user.id}><td>{user.name}</td><td>{user.type}</td><td><button className='reset'>reset vote</button></td></tr>
+            return <tr key={user.id}><td>{user.name}</td><td>{user.type}</td><td><button onClick={clickHandler} name={user.name} className='reset'>reset vote</button></td></tr>
           })}
         </tbody>
       </table>

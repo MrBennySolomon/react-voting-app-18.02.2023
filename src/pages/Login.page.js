@@ -14,7 +14,7 @@ const initialState = {
   type: ''
 };
 
-const [landing, , , vote, ] = PAGES;
+const [landing, , , vote, , ] = PAGES;
 
 const Login = ({ setPage }) => {
   const [values, setValues] = useState(initialState);

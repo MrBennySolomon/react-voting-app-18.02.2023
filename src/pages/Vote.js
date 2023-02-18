@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import '../styles/Vote.css';
 import { PAGES } from '../constants';
+import { Navbar } from '../components';
+
 
 const Vote = ({ setPage }) => {
   const [finish, setFinish] = useState(false);
-  const [landing, , , , admin] = PAGES;
+  const [, , , , admin,thankyou] = PAGES;
   let tempParty = '';
   const voted = JSON.parse(localStorage.getItem('voted'));
   const userData = JSON.parse(localStorage.getItem('userData'));
+  const [user, setUser] = useState(userData);
   
   const clickHandler = (e) => {
     tempParty = e.target.getAttribute('class').toString();
@@ -22,7 +25,7 @@ const Vote = ({ setPage }) => {
       voted.push({name: userData.name, party: votedParty});
       localStorage.setItem(votedParty, JSON.stringify(Number(voteCount) + 1));
       localStorage.setItem('voted', JSON.stringify(voted));
-      userData.type === 'admin' ? setPage(admin) : setPage(landing);
+      userData.type === 'admin' ? setPage(admin) : setPage(thankyou);
     }
   }
 
@@ -30,6 +33,7 @@ const Vote = ({ setPage }) => {
 
   return (
     <div className='vote-div'>
+      <Navbar setPage={setPage} user={user} setUser={setUser} />
       <div className='cards'>
         <button onClick={clickHandler} className='Likud'></button>
         <button onClick={clickHandler} className='YeshAtid'></button>

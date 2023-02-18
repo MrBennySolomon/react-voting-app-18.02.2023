@@ -1,1 +1,1 @@
-export const PAGES = ['landing', 'login', 'main', 'vote', 'admin'];
+export const PAGES = ['landing', 'login', 'main', 'vote', 'admin','thankyou'];

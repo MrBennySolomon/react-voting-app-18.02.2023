@@ -3,7 +3,7 @@ import users from '../data';
 import Wrapper from '../styles/styled/Landing.styled';
 import '../styles/landing.css'
 
-const [, login, , , ] = PAGES;
+const [, login, , , , ] = PAGES;
 
 const Landing = ({ setPage }) => {
   if (!localStorage.getItem('users'))     localStorage.setItem('users', JSON.stringify(users));

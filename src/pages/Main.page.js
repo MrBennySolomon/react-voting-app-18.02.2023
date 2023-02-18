@@ -7,7 +7,7 @@ import { Navbar, UsersList } from '../components';
 
 import data from '../data';
 
-const [landing, , , , ] = PAGES;
+const [landing, , , , , ] = PAGES;
 const userData = JSON.parse(localStorage.getItem('userData'));
 
 const Main = ({ setPage }) => {
