@@ -5,6 +5,8 @@
 ### • This application allows users to login, and vote for one of the parties.
 ### • Each vote that a party gets - will be shown.
 ---------------------------------------------------
+### i used : react, html, css, localStorage And mobile first approach.
+---------------------------------------------------
 ## The application will have to following sections:
 ---------------------------------------------------
 ### • Intro Page.
