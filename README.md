@@ -1,25 +1,26 @@
 ---------------------------------------------------
-# React Voting App
+# [React Voting App](https://react-voting-app-benny.netlify.app)
 ---------------------------------------------------
 ### • This app is a voting application in React.
 ### • This application allows users to login, and vote for one of the parties.
 ### • Each vote that a party gets - will be shown.
 ---------------------------------------------------
-## • i used : react, html, css, localStorage And mobile first approach.
+## • [i used : react, html, css, localStorage And mobile first approach](https://react-voting-app-benny.netlify.app)
 ---------------------------------------------------
 live preview at: https://react-voting-app-benny.netlify.app/
 ---------------------------------------------------
-## The application will have to following sections:
+## [The application will have to following sections:](https://react-voting-app-benny.netlify.app)
 ---------------------------------------------------
 ### • Intro Page.
-### • A Login Page – enter username and password    
+### • A Login Page  – username and password.
 ### • A Voting Page – Where you have the buttons to vote for each party.
-### • An Admin Page – Where all the users are shown in a table, and the users who voted are marked, Also, stats
+### • An Admin Page – Where all the users are shown in a table, and the users who voted are marked, Also, stats.
+### • Thank you for voting Page.
 ---------------------------------------------------
-### First Skech:
+### [First Skech:](https://react-voting-app-benny.netlify.app)
 ![צילום מסך 2023-02-16 ב-14 34 43](https://user-images.githubusercontent.com/53153372/219877288-aad363c6-2562-45fe-b12c-2ee6aca7a4e4.png)
 ---------------------------------------------------
-### Screen Shots:
+### [Screen Shots:](https://react-voting-app-benny.netlify.app)
 ![voting-page](https://user-images.githubusercontent.com/53153372/219877622-7b7ba4d3-11f8-447b-9073-50134833ea17.png)
 ![thankyou](https://user-images.githubusercontent.com/53153372/219877623-f1da6471-8c6e-4f42-bc9c-9bce967ec28b.png)
 ![login](https://user-images.githubusercontent.com/53153372/219877624-28c18034-16d9-491a-abf3-7abd6415a49f.png)
